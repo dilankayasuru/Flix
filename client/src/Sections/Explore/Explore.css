@@ -1,0 +1,51 @@
+.explore-container {
+    padding: 1em 2.5em 5em;
+}
+
+.explore-container h1 {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-style: italic;
+    margin-bottom: 26px;
+    position: relative;
+}
+
+.explore-container h1::after {
+    content: "";
+    position: absolute;
+    width: 70px;
+    border-bottom: 1px solid #000000;
+    bottom: 0;
+    left: 0;
+}
+
+.slick-prev:before, .slick-next:before  {
+    color: #000000;
+    font-size: 30px;
+    opacity: 0.2;
+}
+
+.slick-next {
+    right: 0;
+    z-index: 100;
+    opacity: 0.25;
+}
+
+.slick-prev {
+    left: 0;
+    z-index: 100;
+    opacity: 0.25;
+}
+
+.slick-slide ~ div {
+    padding: 0 10px;
+}
+
+@media screen and (max-width: 600px){
+    .explore-container {
+        padding: 1em 2.5em 3em;
+    }
+    .explore-container h1 {
+        text-align: center;
+    }
+}

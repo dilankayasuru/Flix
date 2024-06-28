@@ -1,0 +1,146 @@
+.aboutUs-wrapper {
+    margin-top: 77px;
+}
+
+.aboutUs-header {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f1f1f1;
+    margin-bottom: 15px;
+}
+.aboutUs-header p {
+    font-size: 2em;
+    letter-spacing: 1px;
+    font-weight: 300;
+    position: relative;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+.aboutUs-header p::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    bottom: 0;
+    left: 0;
+    border-bottom: 2px solid #000000;
+}
+
+/*.header-image {*/
+/*    position: relative;*/
+/*    top: -70px;*/
+/*    max-width: 400px;*/
+/*    margin: 0 auto;*/
+/*}*/
+
+/*.header-image img {*/
+/*    width: 100%;*/
+/*}*/
+
+.aboutUs-content-container {
+    padding: 1em;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
+    margin-bottom: 25px;
+}
+
+.content:nth-child(2n) {
+    flex-direction: row-reverse;
+}
+
+.content-image {
+    max-width: 500px;
+    height: 600px;
+    transition: all .5s ease-in-out;
+}
+
+.content-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content-text {
+    max-width: 600px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    line-height: 30px;
+    font-weight: 300;
+}
+
+.content-text h2 {
+    letter-spacing: 1px;
+    font-size: 26px;
+    text-transform: uppercase;
+    font-style: italic;
+    margin-bottom: 26px;
+    position: relative;
+}
+
+.content-text h2::after {
+    content: "";
+    position: absolute;
+    width: 70px;
+    border-bottom: 1px solid #000000;
+    bottom: 0;
+    left: 0;
+}
+
+.content-footer {
+    max-width: 900px;
+    text-align: center;
+    margin: 3.5em auto;
+}
+
+.content-footer h2::after {
+    content: none;
+}
+
+.footer-bottom-text {
+    margin-top: 16px;
+    font-weight: 400;
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 1165px){
+    .content-text {
+        max-width: 320px;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .content-text {
+        max-width: none;
+    }
+    .content {
+        flex-direction: column-reverse !important;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .aboutUs-wrapper {
+        margin-top: 60px;
+    }
+    .content-text {
+        max-width: none;
+        padding: 1em;
+    }
+    .content-text p {
+        font-size: 17px;
+    }
+    .content {
+        flex-direction: column-reverse !important;
+    }
+
+    .aboutUs-content-container {
+        padding: 1em 0;
+    }
+}

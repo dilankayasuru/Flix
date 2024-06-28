@@ -1,0 +1,113 @@
+.contactUs-container {
+    text-align: center;
+    padding: 3em;
+    background: #e6e5e3;
+    margin-top: 60px;
+}
+
+.contactUs-text {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contactUs-text h1 {
+    margin-bottom: .25em;
+    letter-spacing: 1px;
+    font-size: 2em;
+    text-transform: uppercase;
+    font-style: italic;
+    position: relative;
+}
+
+.contactUs-text p {
+    width: 80%;
+    margin: 0 auto;
+    letter-spacing: 1px;
+    line-height: 30px;
+    font-weight: 300;
+}
+
+.contactUs-container form {
+    margin: 1em auto 0;
+    border-radius: 15px;
+    padding: 2em;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    text-align: start;
+}
+
+.contactUs-container form .form-top-text {
+    font-size: 1.5em;
+    font-weight: 300;
+    margin-bottom: 20px;
+    position: relative;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+.form-top-text::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 70px;
+    border-bottom: 2px solid #000000;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-container input, .message textarea {
+    width: 100%;
+    padding: 10px 5px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #8a8a8a;
+    font-size: 15px;
+    outline: none;
+    transition: border-color .2s;
+    position: relative;
+}
+
+.input-container input::placeholder,
+.message textarea::placeholder {
+    color: #8a8a8a;
+    letter-spacing: 1px;
+}
+
+.input-container input:focus,
+.message textarea:focus {
+    border-bottom-color:  #000000;
+}
+
+.message textarea {
+    position: relative;
+    height: 150px;
+}
+
+.message textarea::placeholder {
+    position: absolute;
+    bottom: 10px;
+}
+
+.contactUs-container form button {
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+.contactUs-container form button:hover {
+    background: none;
+}
+
+@media screen and (max-width: 560px){
+    .contactUs-container {
+        padding: 1em;
+    }
+    .contactUs-text p {
+        width: 100%;
+    }
+}

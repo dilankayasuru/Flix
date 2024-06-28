@@ -1,0 +1,69 @@
+.login-page-wrapper {
+    margin-top: 77px;
+    min-height: calc(100vh - 77px);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("https://images.pexels.com/photos/2526878/pexels-photo-2526878.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-page-container {
+    background: #ffffff;
+    box-shadow: 4px 4px 25px rgba(0,0,0,0.2);
+}
+
+.switch-tabs {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.switch-tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.login-form-container {
+    width: 500px;
+    padding: 2em;
+}
+
+.login-form .input-container {
+    margin-bottom: 2em;
+}
+
+.login-form .input-container label {
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.login-form-container button {
+    width: 100%;
+    border-radius: 0;
+    padding: .8em;
+    margin-bottom: 15px;
+}
+
+
+@media screen and (max-width: 600px){
+    .login-page-wrapper {
+        margin-top: 60px;
+        height: calc(100vh - 60px);
+    }
+}
+
+@media screen and (max-width: 500px){
+    .login-form-container {
+        width: 100vw;
+        padding: 1em;
+    }
+}

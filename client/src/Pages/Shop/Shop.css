@@ -1,0 +1,68 @@
+.shop-container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 5em 1em;
+}
+
+.shop-container .shop-text {
+    max-width: 600px;
+    padding: 2em 0;
+}
+
+.shop-text p {
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+.shop-text h1 {
+    letter-spacing: 1px;
+    margin-bottom: 0.2em;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+.products-container-shop {
+    position: relative;
+    border-top: 1px solid #000000;
+    padding-top: 4em;
+    display: grid;
+    gap: 2em;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.products-container-shop .dropdown {
+    margin-top: 0.8em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 150px;
+}
+
+@media screen and (max-width: 990px){
+    .shop-container {
+        max-width: 100%;
+        padding: 5em 2em;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .products-container-shop {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 550px){
+    .shop-container {
+        padding: 3.5em 1em;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .products-container-shop {
+        grid-template-columns: 1fr;
+    }
+    .products-container-shop div:not(:first-child) {
+        margin: 0 0 10px !important;
+    }
+}
+
