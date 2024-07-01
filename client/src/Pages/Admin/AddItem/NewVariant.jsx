@@ -5,7 +5,6 @@ import {Delete, Mode} from "@mui/icons-material";
 import {VariantContext} from "./AddItem";
 import {ProductContext} from "./AddItem";
 import {jwtDecode} from "jwt-decode";
-import VariantEdit from "../../../Components/VariantEdit";
 
 const ActionButtons = styled.div`
     display: flex;
@@ -22,8 +21,6 @@ const ImageStyles = {
 }
 
 export default function NewVariant(props) {
-
-    const [open, setOpen] = useState(false);
 
     const decoded = jwtDecode(localStorage.getItem('jwtToken'));
 
@@ -116,8 +113,6 @@ export default function NewVariant(props) {
                 </div>
                 <ActionButtons>
                     <Delete cursor="pointer" onClick={handleDelete}/>
-                    {decoded.role === 'admin' && <Mode cursor="pointer" onClick={() => console.log('Hello')}/>}
-                    {(decoded.role === 'admin' && open) && <VariantEdit data={{...props}}/> }
                 </ActionButtons>
             </Box>
         </div>

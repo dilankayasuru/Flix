@@ -31,4 +31,31 @@ router.get('/:id', async (req, res) => {
     }
 })
 
+
+router.get('/variant/:id', async (req, res) => {
+    try {
+
+        const variant = await Variant.findById(req.params.id);
+
+        if (!variant) {
+            return res.status(401).json({
+                status: "failed",
+                message: "Variant Not Found"
+            })
+        }
+
+        res.status(200).json({
+            status: "success",
+            variant: variant
+        })
+
+    }
+    catch (error) {
+        res.status(401).json({
+            status: "failed",
+            message: error.message
+        })
+    }
+})
+
 module.exports = router;

@@ -8,11 +8,7 @@ const router = express.Router();
 router.put('/:id', authenticate, authorize('admin'), async (req, res) => {
     try {
 
-        const {name, category, price, description} = req.body.product;
-
-        const variants = req.body.variants;
-
-        const updateResponse = await Product.findByIdAndUpdate(req.params.id,{name, category, price, description});
+        const updateResponse = await Product.findByIdAndUpdate(req.params.id, {...req.body});
 
         if (!updateResponse) {
             return res.status(500).json({
@@ -21,18 +17,10 @@ router.put('/:id', authenticate, authorize('admin'), async (req, res) => {
             })
         }
 
-        let variantUpdate;
-
-        variants.map(async data => {
-            const {updateVariant} = data.variantData;
-            variantUpdate = await Variant.findByIdAndUpdate(data.id, updateVariant);
-
-        });
-
         res.status(200).json({
             status: 'success',
             message: 'Product saved successfully.',
-            data: {product: updateResponse, variants: variantUpdate}
+            data: updateResponse
         });
 
     } catch (error) {
@@ -47,5 +35,72 @@ router.put('/:id', authenticate, authorize('admin'), async (req, res) => {
         })
     }
 });
+
+router.put('/variant/:id', authenticate, authorize("admin"), async (req, res) => {
+    try {
+
+        const update = req.body.variant;
+
+        await Variant.findByIdAndUpdate(req.params.id, {...update})
+            .then(response => {
+                res.status(200).json({
+                    status: "success",
+                    data: response
+                })
+            })
+            .catch(err => {
+                res.status(401).json({
+                    status: "failed",
+                    message: err.message
+                })
+            })
+    } catch (error) {
+        res.status(500).json({
+            status: "failed",
+            message: error.message
+        })
+    }
+})
+
+router.post('/new-variant/:productID', authenticate, authorize("admin"), async (req, res) => {
+    try {
+        const newVariant = new Variant({...req.body, productId: req.params.productID})
+
+        await newVariant.save()
+            .then(response => {
+                res.status(200).json({
+                    status: "success",
+                    data: response
+                })
+            })
+            .catch(err => {
+                res.status(500).json({
+                    status: "failed",
+                    message: err.message
+                })
+            })
+    } catch (err) {
+        res.status(500).json({
+            status: "failed",
+            message: err.message
+        })
+    }
+})
+
+router.delete('/deleted-variant/:id', authenticate, authorize("admin"), async (req, res) => {
+    await Variant.deleteOne({_id: req.params.id})
+        .then(response => {
+            res.status(200).json({
+                status: "success",
+                data: response
+            })
+        })
+        .catch(err => {
+            res.status(401).json({
+                status: "failed",
+                message: err.message
+            })
+        })
+})
 
 module.exports = router;
