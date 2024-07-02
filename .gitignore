@@ -131,3 +131,5 @@ dist
 
 #jetbrains
 .idea
+
+server/vercel.json
