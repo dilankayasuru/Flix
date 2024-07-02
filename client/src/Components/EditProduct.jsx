@@ -76,7 +76,7 @@ export default function EditProduct() {
     useEffect(() => {
         setIsLoading(true)
         try {
-            axios.get(`http://localhost:5000/get-edit/${location.state}`)
+            axios.get(`https://flix-server.vercel.app/get-edit/${location.state}`)
                 .then(res => {
                     setProduct(res.data.product)
                     setVariants(res.data.variants)
@@ -103,7 +103,7 @@ export default function EditProduct() {
 
         axios.defaults.headers.common["Authentication"] = 'Bearer ' + localStorage.getItem('jwtToken');
 
-        axios.put(`http://localhost:5000/update-product/${product._id}`, {...product})
+        axios.put(`https://flix-server.vercel.app/update-product/${product._id}`, {...product})
             .then(res => {
                 navigate("/admin")
             })

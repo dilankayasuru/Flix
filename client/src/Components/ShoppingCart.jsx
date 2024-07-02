@@ -108,7 +108,7 @@ export default function ShoppingCart(props) {
 
         axios.defaults.headers.common['Authentication'] = 'Bearer ' + token;
 
-        axios.put('http://localhost:5000/delete-cart-item', {id, size})
+        axios.put('https://flix-server.vercel.app/delete-cart-item', {id, size})
             .then(res => {
                 setError('')
                 setDelete(true)
@@ -138,7 +138,7 @@ export default function ShoppingCart(props) {
 
             axios.defaults.headers.common['Authentication'] = 'Bearer ' + token;
 
-            axios.get('http://localhost:5000/get-cart')
+            axios.get('https://flix-server.vercel.app/get-cart')
                 .then(res => {
                     setError('')
                     setProducts(res.data.cart.products)

@@ -29,7 +29,7 @@ export default function Login() {
         e.preventDefault();
 
         try {
-            await axios.post('http://localhost:5000/login', {email: formData.email, password: formData.password})
+            await axios.post('https://flix-server.vercel.app/login', {email: formData.email, password: formData.password})
                 .then((res) => {
                     const token = res.data.token;
                     localStorage.setItem('jwtToken', token);
@@ -55,7 +55,7 @@ export default function Login() {
 
         if (confirmPw === formData.password) {
             try {
-                await axios.post('http://localhost:5000/register', formData)
+                await axios.post('https://flix-server.vercel.app/register', formData)
                     .then((res) => {
                         const token = res.data.token;
                         localStorage.setItem('jwtToken', token);

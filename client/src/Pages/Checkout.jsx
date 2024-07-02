@@ -146,7 +146,7 @@ export default function Checkout() {
 
         axios.defaults.headers.common['Authentication'] = 'Bearer ' + token;
 
-        axios.post('http://localhost:5000/checkout', order)
+        axios.post('https://flix-server.vercel.app/checkout', order)
             .then((res) => {
                 const {message, orderId} = res.data;
                 setError('');

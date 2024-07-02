@@ -69,7 +69,7 @@ export default function VariantEdit(props) {
 
     useEffect(() => {
         if (props.data.variantId) {
-            axios.get(`http://localhost:5000/get-edit/variant/${props.data.variantId}`)
+            axios.get(`https://flix-server.vercel.app/get-edit/variant/${props.data.variantId}`)
                 .then(res => {
                     setVariant(res.data.variant)
                     setLoading(false)
@@ -175,7 +175,7 @@ export default function VariantEdit(props) {
         axios.defaults.headers.common['Authentication'] = 'Bearer ' + token;
 
         if (props.data.productId) {
-            return axios.post(`http://localhost:5000/update-product/new-variant/${props.data.productId}`, {...variant})
+            return axios.post(`https://flix-server.vercel.app/update-product/new-variant/${props.data.productId}`, {...variant})
                 .then(res => {
                     setOpen(false)
                 })
@@ -185,7 +185,7 @@ export default function VariantEdit(props) {
                 })
         }
 
-        axios.put(`http://localhost:5000/update-product/variant/${variant._id}`, {variant})
+        axios.put(`https://flix-server.vercel.app/update-product/variant/${variant._id}`, {variant})
             .then(res => {
                 console.log(res.data.status)
             })

@@ -43,7 +43,7 @@ export default function GetOrders() {
 
         const role = jwtDecode(token).role
 
-        const route = role === "user" ? 'http://localhost:5000/get-orders-user' : 'http://localhost:5000/get-orders-admin'
+        const route = role === "user" ? 'https://flix-server.vercel.app/get-orders-user' : 'https://flix-server.vercel.app/get-orders-admin'
 
         axios.defaults.headers.common['Authentication'] = 'Bearer ' + token;
 

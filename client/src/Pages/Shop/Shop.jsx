@@ -60,7 +60,7 @@ export default function Shop() {
         setLoading(true)
         const reqRoute = category ? `get-product-category/${category}` : "get-products"
 
-        axios.get(`http://localhost:5000/${reqRoute}`)
+        axios.get(`https://flix-server.vercel.app/${reqRoute}`)
             .then((res) => {
                 setError('')
                 setSortedProducts(res.data.products);

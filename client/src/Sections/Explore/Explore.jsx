@@ -43,7 +43,7 @@ export default function Explore() {
     };
 
     useEffect(() => {
-        axios.get('http://localhost:5000/featured')
+        axios.get('https://flix-server.vercel.app/featured')
             .then((res) => {
                 setProducts(res.data.products);
             })

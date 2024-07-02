@@ -132,7 +132,7 @@ export default function Profile() {
         const token = localStorage.getItem('jwtToken');
         axios.defaults.headers.common['Authentication'] = 'Bearer ' + token;
 
-        axios.put('http://localhost:5000/update-user', {user})
+        axios.put('https://flix-server.vercel.app/update-user', {user})
             .then(() => {
                 setError('')
                 setResponse('Profile is updated successfully.')
@@ -149,7 +149,7 @@ export default function Profile() {
 
         axios.defaults.headers.common['Authentication'] = 'Bearer ' + token;
 
-        axios.get('http://localhost:5000/get-user')
+        axios.get('https://flix-server.vercel.app/get-user')
             .then(res => {
 
                 const {name, email, phone, address} = res.data.user;
@@ -288,7 +288,7 @@ function ChangePassword() {
         const token = localStorage.getItem('jwtToken');
         axios.defaults.headers.common['Authentication'] = 'Bearer ' + token;
 
-        axios.put('http://localhost:5000/password', {
+        axios.put('https://flix-server.vercel.app/password', {
             currentPassword: data.currentPassword,
             newPassword: data.newPassword,
         })

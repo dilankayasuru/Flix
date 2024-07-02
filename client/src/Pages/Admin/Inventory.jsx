@@ -136,7 +136,7 @@ export default function Inventory() {
 
     useEffect(() => {
         setLoading(true)
-        axios.get('http://localhost:5000/get-products')
+        axios.get('https://flix-server.vercel.app/get-products')
             .then((res) => {
                 setError('')
                 setShowProducts(res.data.products);

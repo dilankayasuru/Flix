@@ -34,7 +34,7 @@ export default function VariantView(props) {
     const handleDelete = () => {
         axios.defaults.headers.common["Authentication"] = 'Bearer ' + localStorage.getItem("jwtToken");
 
-        axios.delete(`http://localhost:5000/update-product/deleted-variant/${variant._id}`)
+        axios.delete(`https://flix-server.vercel.app/update-product/deleted-variant/${variant._id}`)
             .then(res => {
                 console.log(res.data.status)
                 window.location.reload()
@@ -52,7 +52,7 @@ export default function VariantView(props) {
 
     useEffect(() => {
         setIsLoading(true)
-        axios.get(`http://localhost:5000/get-edit/variant/${props.id}`)
+        axios.get(`https://flix-server.vercel.app/get-edit/variant/${props.id}`)
             .then(res => {
                 setVariant(res.data.variant)
                 setSize(res.data.variant.stock[0].size)

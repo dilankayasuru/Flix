@@ -70,7 +70,7 @@ export default function WriteReview(props) {
         const token = localStorage.getItem('jwtToken');
         axios.defaults.headers.common['Authentication'] = 'Bearer ' + token;
 
-        axios.post('http://localhost:5000/post-review', {...review, productId: props.productId})
+        axios.post('https://flix-server.vercel.app/post-review', {...review, productId: props.productId})
             .then((res) => {
                 setError('')
                 setResponse(true)

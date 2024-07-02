@@ -66,7 +66,7 @@ export default function OrderItem(props) {
 
         axios.defaults.headers.common['Authentication'] = 'Bearer ' + token;
 
-        axios.put("http://localhost:5000/update-order", {orderId: props._id, status: e.target.value})
+        axios.put("https://flix-server.vercel.app/update-order", {orderId: props._id, status: e.target.value})
             .then((res) => {
                 setResponse(res.data.message)
                 setError('')
@@ -89,7 +89,7 @@ export default function OrderItem(props) {
 
         axios.defaults.headers.common['Authentication'] = 'Bearer ' + localStorage.getItem('jwtToken');
 
-        axios.put(`http://localhost:5000/cancel-order/${props._id}`)
+        axios.put(`https://flix-server.vercel.app/cancel-order/${props._id}`)
             .then(res => {
                 setError('')
                 console.log(res)

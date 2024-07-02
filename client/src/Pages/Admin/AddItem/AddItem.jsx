@@ -76,7 +76,7 @@ export default function AddItem(props) {
 
         axios.defaults.headers.common['Authentication'] = 'Bearer ' + token;
 
-        axios.post('http://localhost:5000/post-product', product)
+        axios.post('https://flix-server.vercel.app/post-product', product)
             .then((res) => {
                 setError('');
                 props.handleClose();
@@ -103,7 +103,7 @@ export default function AddItem(props) {
 
     useEffect(() => {
         if (id) {
-            axios.get(`http://localhost:5000/get-edit/${id}`)
+            axios.get(`https://flix-server.vercel.app/get-edit/${id}`)
                 .then(res => {
                     const {category, description, name, price, thumbnail, _id} = res.data.product;
                     const resVariants = [];

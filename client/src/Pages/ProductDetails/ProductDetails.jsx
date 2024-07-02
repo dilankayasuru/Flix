@@ -41,7 +41,7 @@ export default function ProductDetails() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                axios.get(`http://localhost:5000/get-product-by-id/${id}`)
+                axios.get(`https://flix-server.vercel.app/get-product-by-id/${id}`)
                     .then((res) => {
                         const reviews = res.data.reviews || [];
                         const variants = res.data.variants || [];
@@ -95,7 +95,7 @@ export default function ProductDetails() {
         if (token) {
             axios.defaults.headers.common['Authorization'] = 'Bearer ' + token
 
-            axios.put('http://localhost:5000/add-to-cart', {...item})
+            axios.put('https://flix-server.vercel.app/add-to-cart', {...item})
                 .then(res => {
                     setError('')
                     setResponse(true)

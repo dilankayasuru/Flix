@@ -227,7 +227,7 @@ function OrderItem(props) {
         setUser(token.role === 'user');
 
         try {
-            axios.get(`http://localhost:5000/product/${props.productId}/${props.variantId}`)
+            axios.get(`https://flix-server.vercel.app/product/${props.productId}/${props.variantId}`)
                 .then((res) => {
                     setProduct(res.data.product)
                     setVariantImg(res.data.variantImg)
