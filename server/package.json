@@ -11,7 +11,8 @@
   },
   "scripts": {
     "devStart": "nodemon server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "npm install"
   },
   "name": "server",
   "version": "1.0.0",
