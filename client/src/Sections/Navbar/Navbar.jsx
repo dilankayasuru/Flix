@@ -90,10 +90,10 @@ export default function Navbar() {
                     </Link>
                     <nav>
                         <ul>
-                            <li><span><Link to="/shop/men">Men</Link></span></li>
-                            <li><span><Link to="/shop/women">Women</Link></span></li>
-                            <li><span><Link to="/shop/kids">Kids</Link></span></li>
-                            <li><span><Link to="/shop">Shop</Link></span></li>
+                            <li onClick={() => navigate("/shop/men")}><span>Men</span></li>
+                            <li onClick={() => navigate("/shop/women")}><span>Women</span></li>
+                            <li onClick={() => navigate("/shop/kids")}><span>Kids</span></li>
+                            <li onClick={() => navigate("/shop")}><span>Shop</span></li>
                         </ul>
                     </nav>
                     <div className="button-container">
@@ -161,10 +161,22 @@ export default function Navbar() {
                     </div>
                     <nav>
                         <ul>
-                            <li onClick={() => setShowMenu(!showMenu)}><span><Link to="/shop/men">Men</Link></span></li>
-                            <li onClick={() => setShowMenu(!showMenu)}><span><Link to="/shop/women">Women</Link></span></li>
-                            <li onClick={() => setShowMenu(!showMenu)}><span><Link to="/shop/kids">Kids</Link></span></li>
-                            <li onClick={() => setShowMenu(!showMenu)}><span><Link to="/shop">Shop</Link></span></li>
+                            <li onClick={() => {
+                                setShowMenu(!showMenu)
+                                navigate("/shop/men")
+                            }}><span>Men</span></li>
+                            <li onClick={() => {
+                                setShowMenu(!showMenu)
+                                navigate("/shop/women")
+                            }}><span>Women</span></li>
+                            <li onClick={() => {
+                                setShowMenu(!showMenu)
+                                navigate("/shop/kids")
+                            }}><span>Kids</span></li>
+                            <li onClick={() => {
+                                setShowMenu(!showMenu)
+                                navigate("/shop")
+                            }}><span>Shop</span></li>
                         </ul>
                     </nav>
                     {
@@ -176,7 +188,10 @@ export default function Navbar() {
                                 </p>
                             </div>
                             <div className="mobile-nav-buttons">
-                                <Button onClick={() => setShowMenu(!showMenu)}><Link to="/login">Join Us</Link></Button>
+                                <Button onClick={() => {
+                                    setShowMenu(!showMenu)
+                                    navigate("/login")
+                                }}>Join Us</Button>
                             </div>
                         </div>
                     }
